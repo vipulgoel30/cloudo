@@ -1,0 +1,21 @@
+{
+  "name": "@mono/backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx ./env/generateEnv.ts --env=./env/.env.dev --env-expand=./env/.env && nodemon",
+    "prod": "tsx ./env/generateEnv.ts --env=./env/.env.dev --env-expand=./env/.env && nodemon",
+    "build": "tsc",
+    "deploy": "node ./dist/server.js"
+  },
+  "dependencies": {
+    "@mono/prisma": "workspace:*",
+    "@mono/utils": "workspace:*",
+    "@prisma/client": "^6.4.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

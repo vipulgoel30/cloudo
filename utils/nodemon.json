@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ignore": ["dist", "./src/index.ts"],
+  "ext": "ts",
+  "exec": "tsx ./src/generateExports.ts && tsc"
+}

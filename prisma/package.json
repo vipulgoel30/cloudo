@@ -1,0 +1,23 @@
+{
+  "name": "@mono/prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.js",
+  "scripts": {
+    "dev": "tsc",
+    "db-dev": "tsc && prisma db push",
+    "db-studio": "prisma studio",
+    "db-migrate": "prisma migrate dev --skip-generate",
+    "db-generate": "prisma generate"
+  },
+  "keywords": [],
+  "author": "Vipul Goel",
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "6.4.1"
+  },
+  "dependencies": {
+    "@prisma/client": "6.4.1"
+  }
+}

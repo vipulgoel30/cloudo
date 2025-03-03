@@ -1,0 +1,25 @@
+# Command --> docker-compose -f ./postgres-docker-compose.yaml up
+
+version: "3.1"
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes: 
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=user
+      - POSTGRES_DB=cloudo
+
+  # adminer dashboard --> for the server field add the container name of the database
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres-volume:
+    driver: local
