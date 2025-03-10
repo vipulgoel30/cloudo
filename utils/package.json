@@ -11,5 +11,11 @@
   },
   "keywords": [],
   "author": "Vipul Goel",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20"
+  }
 }

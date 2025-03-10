@@ -5,8 +5,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.js",
   "scripts": {
-    "dev": "tsc",
-    "db-dev": "tsc && prisma db push",
+    "dev": "nodemon",
+    "db-push": "prisma db push --accept-data-loss",
     "db-studio": "prisma studio",
     "db-migrate": "prisma migrate dev --skip-generate",
     "db-generate": "prisma generate"

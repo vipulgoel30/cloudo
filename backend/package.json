@@ -2,7 +2,7 @@
   "name": "@mono/backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/server.js",
   "type": "module",
   "scripts": {
     "dev": "tsx ./env/generateEnv.ts --env=./env/.env.dev --env-expand=./env/.env && nodemon",
@@ -13,7 +13,8 @@
   "dependencies": {
     "@mono/prisma": "workspace:*",
     "@mono/utils": "workspace:*",
-    "@prisma/client": "^6.4.0"
+    "@prisma/client": "^6.4.0",
+    "bcryptjs": "^3.0.2"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "prisma"],
+  "ext": "*",
+  "legacyWatch": true,
+  "exec": "tsc && prisma db push"
+}
