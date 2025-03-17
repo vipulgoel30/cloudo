@@ -1,0 +1,22 @@
+version: "3.0"
+
+services:
+  redis:
+    image: redis/redis-stack # contains both redis and redis-insights
+    ports:
+      - 6379:6379 # redis server port
+      - 8001:8001 # redis-insights port
+    volumes:
+      - redis-drive:/data
+
+  # For production only running redis server
+  # redis:
+  #   image: redis/redis-stack-server
+  #   ports:
+  #     - 6379 : 6379
+  #   volumes:
+  #     - redis-drive:/data
+
+volumes:
+  redis-drive:
+    driver: local

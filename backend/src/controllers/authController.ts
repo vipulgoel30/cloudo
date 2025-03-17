@@ -6,9 +6,7 @@ import { hash } from "bcryptjs";
 import { catchAsync, createBadRequestError, getTime, SignupI, signupSchema } from "@mono/utils";
 import { prisma, User } from "@mono/prisma";
 
-const sendVerificationMail = () => {
-    
-};
+const sendVerificationMail = () => {};
 
 export const signup = catchAsync(async (req: Request<{}, {}, SignupI>, res: Response, next: NextFunction) => {
   // Parsing payload against schema
@@ -16,9 +14,7 @@ export const signup = catchAsync(async (req: Request<{}, {}, SignupI>, res: Resp
 
   // Checking if the user alread exist with this email or not
   const user: User | null = await prisma.user.findUnique({
-    where: {
-      email: payload.email,
-    },
+    where: { email: payload.email },
   });
 
   // User is already verified or signup recently less than 24 hrs
@@ -26,10 +22,7 @@ export const signup = catchAsync(async (req: Request<{}, {}, SignupI>, res: Resp
     return next(createBadRequestError("User already exist with this email. Continue to login!!!"));
   }
 
-  res.status(201).json({
-    status: "success",
-    message: "User created successfully.",
-  });
+  res.status(201).json({ status: "success", message: "User created successfully." });
 
   // If user exist then deleting it if it is not verified within 24 hrs
   if (user) {

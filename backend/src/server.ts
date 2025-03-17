@@ -1,7 +1,8 @@
 // User imports
 import { errLogger } from "@mono/utils";
-import app from "./app.js";
+import httpServer from "./app.js";
 import { prisma, Prisma } from "@mono/prisma";
+import "./socket.js";
 
 const ERR_TYPES = ["uncaughtException", "unhandledRejection"] as const;
 ERR_TYPES.forEach((errType: (typeof ERR_TYPES)[number]) => {
@@ -17,7 +18,7 @@ const initServer = async () => {
     console.log("DB connected successfully ✅✅✅");
 
     const port: number = parseInt(process.env.PORT ?? "4000");
-    app.listen(port, () => {
+    httpServer.listen(port, () => {
       console.log(`App listening on port : ${port} 🎉🎉🎉`);
     });
   } catch (err) {
